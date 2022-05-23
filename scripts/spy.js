@@ -8,17 +8,17 @@
         this.db = db;
     }
 
-    Shop.prototype.createOrder = function (order) {
+    Spy.prototype.createOrder = function (order) {
         console.log('Adding order for ' + order.emailAddress);
         this.db.add(order.emailAddress, order);
     }
 
-    Shop.prototype.deliverOrder = function (customerId) {
+    Spy.prototype.deliverOrder = function (customerId) {
         console.log('Delivering order for ' + customerId);
         this.db.remove(customerId);
     }
 
-    Shop.prototype.printOrder = function() {
+    Spy.prototype.printOrder = function() {
         //first, get all the email addresses (key)
         let customerIdArray = Objects.keys(this.db.getAll());
 
